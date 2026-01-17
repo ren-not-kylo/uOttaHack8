@@ -1,6 +1,6 @@
 
 
-const GEMINI_API_KEY = "AIzaSyA6LQAYz6sYizh4T6qmNFTUasokklymfH4";
+const GEMINI_API_KEY = "KEY";
 
 const endpoint =
   `https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
@@ -23,12 +23,12 @@ document.getElementById("send").addEventListener("click", async () => {
     outcomeString = getOutcomeString();
     numQuestions = document.getElementById('numQuestions').value;
     researchTopic = document.getElementById('researchTopic').value;
-    
+
     console.log("User attributes: ", attributes);
     console.log('Number of Questions:', numQuestions);
     console.log('Research Goals:', researchTopic);
     console.log("number of options: ", categoryCount);
-    console.log('Outcomes String:', outcomeString);
+    console.log('Outcome String:', outcomeString);
   
   //const number = 5
   //const options = 4

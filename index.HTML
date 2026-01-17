@@ -1,15 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>uottahack 8</title>
+  <meta charset="UTF-8">
+  <title>Survey Specification Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: 20px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 20px;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 4px;
+      margin-top: 6px;
+    }
+    .outcome-item {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .outcome-item input {
+      flex: 1;
+    }
+    .remove-btn {
+      width: auto;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Your content goes here -->
-    <h1>Hello, World!</h1>
-    <p>This is a basic HTML paragraph.</p>
+<h2>Survey Specification Form</h2>
+
+<form id="surveyForm">
+
+  <label for="numQuestions">Number of Questions</label>
+  <input type="number" id="numQuestions" name="numQuestions" min="1" required>
+
+  <label for="researchTopic">Research Topic</label>
+  <textarea id="researchTopic" name="researchTopic" rows="4" required></textarea>
+
+  <label>Expected Outcomes / Categories</label>
+  <div id="outcomesContainer">
+    <div class="outcome-item">
+      <input type="text" name="expectedOutcomes[]" placeholder="Enter an outcome/category" required>
+      <button type="button" class="remove-btn" onclick="removeOutcome(this)">Remove</button>
+    </div>
+  </div>
+
+  <button type="button" onclick="addOutcome()">Add Another Outcome</button>
+
+  <br><br>
+  <button type="submit">Submit</button>
+
+</form>
+
+<script>
+  function addOutcome() {
+    const container = document.getElementById('outcomesContainer');
+    const div = document.createElement('div');
+    div.className = 'outcome-item';
+    div.innerHTML = `
+      <input type="text" name="expectedOutcomes[]" placeholder="Enter an outcome/category" required>
+      <button type="button" class="remove-btn" onclick="removeOutcome(this)">Remove</button>
+    `;
+    container.appendChild(div);
+  }
+
+  function removeOutcome(button) {
+    const container = document.getElementById('outcomesContainer');
+    if (container.children.length > 1) {
+      button.parentElement.remove();
+    }
+  }
+  function readInput(){
+    const container
+  }
+</script>
 
 </body>
 </html>
+

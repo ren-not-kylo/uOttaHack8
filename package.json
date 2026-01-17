@@ -1,0 +1,29 @@
+{
+  "name": "uottahack8-1",
+  "version": "1.0.0",
+  "description": "uOttaHack 8 project",
+  "main": "script.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ren-not-kylo/uOttaHack8.git"
+  },
+  "author": "Chelsea Brown",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ren-not-kylo/uOttaHack8/issues"
+  },
+  "homepage": "https://github.com/ren-not-kylo/uOttaHack8#readme",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}

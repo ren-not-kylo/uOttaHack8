@@ -27,7 +27,7 @@ document.getElementById("send").addEventListener("click", async () => {
   responseBox.textContent = "Thinking...";
 
   try {
-    const res = await fetch(endpoint, {
+    const res = await fetch("/api/data", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

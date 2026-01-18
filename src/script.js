@@ -32,7 +32,7 @@ document.getElementById("send").addEventListener("click", async () => {
   //const traits = "boy, likes cars, likes sports, 20 years old"
   //const opt_traits = document.getElementById("opt_traits").value;
 
-  const final_prompt = "I'm creating a survey that determines the " + researchTopic + " of each participant. Give me" + numQuestions + "questions that are based on a person with the following traits:" + attributes + "Each question should have" + categoryCount + "options. The traits associated with each category are as follows:" + outcomeString +  ". Only give the questions and answers. Base the questions around what a user of this specific profile may enjoy seeing."
+  const final_prompt = "I'm creating a survey that determines the " + researchTopic + " of each participant. Give me" + numQuestions + "questions that are based on a person with the following traits:" + attributes + "Each question should have" + categoryCount + "options. The traits associated with each category are as follows:" + outcomeString +  ". Only give the questions and answers. Base the questions around what a user of this specific profile may enjoy seeing. Return the response formatted as an HTML form, along with a submit button with id \"formSubmit\" so that users can select each response throught radio buttons. Use best practices when formating the form."
 
   //Option 1 should follow: brave, courageous traits. Option 2 should follow: smart, clever traits. Option 3 should follow: kind, honest traits. Option 4 should follow: cunning, ambitious traits. Only give the questions and answers. Base the questions around what a user of this specific profile may enjoy seeing."
 
@@ -53,8 +53,8 @@ document.getElementById("send").addEventListener("click", async () => {
 
     const data = await res.json();
 
-    responseBox.textContent =
-      data.candidates?.[0]?.content?.parts?.[0]?.text || "No response";
+    responseBox.innerHTML =
+      data.candidates?.[0]?.content?.parts?.[0]?.text || "<p>No response</p>";
   } catch (err) {
     responseBox.textContent = "Error: " + err.message;
   }

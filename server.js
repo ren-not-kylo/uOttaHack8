@@ -7,11 +7,7 @@ const app = express();
 app.use(express.json()); // IMPORTANT for reading JSON body
 app.use(express.static("src"));
 
-fetch(
-  `https://generativelanguage.googleapis.com/v1beta/models?key=${process.env.GEMINI_API_KEY}`
-)
-  .then(res => res.json())
-  .then(console.log);
+
 
 
 const GEMINI_ENDPOINT =

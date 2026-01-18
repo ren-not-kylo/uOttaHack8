@@ -3,52 +3,21 @@
 <head>
  <meta charset="UTF-8">
  <title>Survey Template</title>
- <style>
-   body {
-     font-family: Arial, sans-serif;
-     max-width: 700px;
-     margin: 20px;
-   }
-   label {
-     font-weight: bold;
-     display: block;
-     margin-top: 20px;
-   }
-   input, textarea, button {
-     width: 100%;
-     padding: 4px;
-     margin-top: 6px;
-   }
-   .outcome-item {
-     display: flex;
-     gap: 8px;
-     margin-top: 8px;
-   }
-   .outcome-item input {
-     flex: 1;
-   }
-   .remove-btn {
-     width: auto;
-   }
- </style>
+ <link rel="stylesheet" href="styles.css">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
-
-
+<div class="card cardDiv container">
 <h2>Survey Specification Form</h2>
 
-
-
-
- <label for="numQuestions">Number of Questions</label>
+ <p for="numQuestions">Number of Questions</p>
  <input type="number" id="numQuestions" name="numQuestions" min="1" required>
 
-
- <label for="researchTopic">Research Topic</label>
+ <p for="researchTopic">Research Topic</p>
  <textarea id="researchTopic" name="researchTopic" rows="4" required></textarea>
 
-
- <label>Expected Outcomes / Categories</label>
+ <p>Expected Outcomes / Categories</p>
  <div id="outcomesContainer">
    <div class="outcome-block">
      <div class="outcome-row">
@@ -56,32 +25,31 @@
          type="text"
          name="outcomes[0][category]"
          placeholder="Outcome / Category name"
-         required
-       >
-       <button type="button" class="remove-btn" onclick="removeOutcome(this)">Remove</button>
+         required>
+       <button type="button" class="remove-btn" onclick="removeOutcome(this)">Remove Entry</button>
      </div>
-
 
      <textarea
        name="outcomes[0][traits]"
        rows="3"
        placeholder="Traits associated with this category (e.g., behaviors, attributes, indicators)"
-       required
-     ></textarea>
+       required></textarea>
    </div>
  </div>
 
-
  <button type="button" onclick="addOutcome()">Add Another Outcome</button>
-
 
  <br><br>
  <input type="text" id="attributes" placeholder="user attributes (ex. demographic data, interests)">
 
  <button id="send">Send</button>
 
- <pre id="response"></pre>
-
  <script src="script.js"></script>
+</div>
+
+<div class="card formDiv container">
+  <p id="response"></p>
+</div>
+
 </body>
 </html>

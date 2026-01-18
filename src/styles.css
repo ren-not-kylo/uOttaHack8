@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 50px;
+    padding: 20pt;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+#numQuestions{
+    max-width: 15%;
+}
+
+.cardDiv {
+    padding: 30pt;
+}
+
+p {
+    font-weight: bold;
+    padding-top: 10pt;
+    padding-bottom: 5pt;
+    
+}
+input, textarea, button {
+    width: 100%;
+}
+.outcome-block{
+    display: flex;
+    justify-items: center;
+    margin-bottom: 20pt;
+}
+
+.outcome-item {
+    gap: 8px;
+    margin-top: 8px;
+}
+.outcome-item input {
+    flex: 1;
+}
+.remove-btn {
+    width: auto;
+}
+
+#response {
+    max-width: inherit;
+}
+
+#response form, p, input, label{
+    max-width: 100%;
+}

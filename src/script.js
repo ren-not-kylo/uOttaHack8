@@ -77,7 +77,7 @@ let outcomeIndex = 1;
           placeholder="Outcome / Category name"
           required
         >
-        <button type="button" class="remove-btn" onclick="removeOutcome(this)">Remove</button>
+        <button type="button" class="remove-btn" onclick="removeOutcome(this)">Remove Entry</button>
       </div>
 
       <textarea

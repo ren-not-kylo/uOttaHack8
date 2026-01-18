@@ -8,7 +8,7 @@ import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword } fr
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const firebaseConfig = {
-    apiKey: "API_KEY",
+    apiKey: "AIzaSyDN2YNjopvLjB4jcHjTNwrhtfmGmODVPvA",
     authDomain: "uottahack8.firebaseapp.com",
     projectId: "uottahack8",
     storageBucket: "uottahack8.firebasestorage.app",
@@ -34,6 +34,7 @@ function signUp() {
  createUserWithEmailAndPassword(auth, email, password).catch((e) => {
     errorElement.textContent = e.message;
     alert(e.message);
+    
   });
   alert("Signed Up");
 
